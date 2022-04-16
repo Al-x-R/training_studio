@@ -8,7 +8,6 @@ interface IMenuList {
 }
 
 const Header: FC<IMenuList> = ({ navItems }) => {
-  console.log('test');
   return (
     <Flex
       w={'100%'}
@@ -16,8 +15,14 @@ const Header: FC<IMenuList> = ({ navItems }) => {
       justify={'space-between'}
       align={'center'}
       px={10}
-      backgroundColor={'lightgrey'}
+      backgroundColor={'rgba(250,250,250,0.3)'}
       color={'white'}
+      transition={'all .5s ease 0s'}
+      position={'absolute'}
+      top={0}
+      right={0}
+      left={0}
+      zIndex={10}
     >
       <Text fontSize='lg'>
         <Link href={'/'}>Maximus</Link>
