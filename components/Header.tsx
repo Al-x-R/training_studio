@@ -1,26 +1,19 @@
 import React, { FC } from 'react';
 import { Flex, List, ListItem, Text } from '@chakra-ui/react';
-
-const menuList = [
-  {id: 1, title: 'Главня'},
-  {id: 2, title: 'О нас'},
-  {id: 3, title: 'Секции'},
-  {id: 4, title: 'Расписания'},
-  {id: 5, title: 'Цены'},
-]
+import Link from 'next/link';
+import {IMenuItem } from '../interfaces'
 
 interface IMenuList {
-  id: number;
-  title: string;
+  navItems: IMenuItem[]
 }
 
-const Header: FC<IMenuList> = ({id, title}) => {
+const Header: FC<IMenuList> = ({navItems}) => {
   return (
-    <Flex w={'100%'} h={20} justify={'space-between'} px={10} backgroundColor={'rgba(250, 250, 250, 0.1)'}>
-      <Text fontSize="lg">Logo</Text>
+    <Flex w={'100%'} h={20} justify={'space-between'} align={'center'} px={10} backgroundColor={'lightgrey'} color={'white'}>
+      <Text fontSize="lg"><Link href={'/'}>Maximus</Link></Text>
       <List d={'flex'}>
-        {menuList.map(item => (
-          <ListItem key={item.id} px={2}>{item.title}</ListItem>
+        {navItems.map(item => (
+          <ListItem key={item.id} px={2}><Link href={item.link}>{item.name}</Link></ListItem>
         ))}
       </List>
     </Flex>
