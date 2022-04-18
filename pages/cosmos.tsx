@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from '../components/Header';
-import { NAV_ITEMS } from '../helpers/helpers';
+import { NAV_ITEMS, COSMOS_SECTION_ITEMS } from '../helpers/helpers';
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import SectionItem from '../components/SectionItem';
 
 const Cosmos = () => {
   return (
@@ -15,26 +16,43 @@ const Cosmos = () => {
         backgroundSize='cover'
         w={'100%'}
         h={'100vh'}
-        pt={'150px'}
+        pt={'170px'}
         justify={'center'}
       >
-        <Flex flexDir={'column'} color={'white'}>
-          <Heading as={'h1'} size={'3xl'}>
+        <Flex flexDir={'column'} color={'white'} align={'center'}>
+          <Heading as={'h1'} size={'4xl'}>
             Maximus
           </Heading>
-          <Text fontSize={'2xl'} pt={3}>
+          <Text fontSize={'3xl'} pt={3}>
             Энергия твоего успеха!
           </Text>
         </Flex>
       </Flex>
-      <Box h={'500px'} w={'100%'}>
-        <Box>Section</Box>
-        <Box>Section</Box>
-        <Box>Section</Box>
-        <Box>Section</Box>
-        <Box>Section</Box>
-        <Box>Section</Box>
+      {/*     sections     */}
+      <Box textAlign={'center'}>
+        <Heading as={'h2'} size={'3xl'} py={5}>Наши услуги</Heading>
+        <Flex w={'100%'} px={10} flexWrap={'wrap'}>
+          {COSMOS_SECTION_ITEMS.map(item => (
+            <Box key={item.id} w={'33%'} mb={5}>
+              <SectionItem image={item.image} name={item.name} link={item.link} />
+            </Box>
+          ))}
+        </Flex>
       </Box>
+
+      {/*     schedules     */}
+      <Flex w={'100%'} h={'500px'} background={'silver'}>
+        schedules
+      </Flex>
+      {/*trainers*/}
+      <Flex w={'100%'} h={'500px'} background={'white'}>
+        trainers
+      </Flex>
+
+      {/*    footer    */}
+      <Flex w={'100%'} h={'300px'} background={'silver'}>
+        footer
+      </Flex>
     </>
   );
 };

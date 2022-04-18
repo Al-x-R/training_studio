@@ -5,6 +5,7 @@ import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import { GoLocation } from 'react-icons/go';
 import { FaInstagram, FaTelegramPlane } from 'react-icons/fa';
 import Link from 'next/link';
+import { GYM_ITEMS } from '../helpers/helpers';
 
 const Home: NextPage = () => {
   return (
@@ -37,44 +38,41 @@ const Home: NextPage = () => {
       </Flex>
 
       <Flex as={'main'} h={'100%'} w={'100%'} justify={'center'} align={'center'}>
-        <Link href={'/cosmos'}>
-          <Flex
-            flexDir={'column'}
-            justify={'center'}
-            align={'center'}
-            w={'280px'}
-            h={'250px'}
-            color={'white'}
-            p={10}
-            _hover={{
-              backgroundColor: 'rgba(255,255,255,0.5)',
-              cursor: 'pointer',
-            }}
-          >
-            <GoLocation size={50} />
-            <Heading as={'h3'}>Космос</Heading>
-            <Text>Космічна, 119</Text>
-          </Flex>
-        </Link>
-        <Link href={'/baburka'}>
-          <Flex
-            flexDir={'column'}
-            justify={'center'}
-            align={'center'}
-            w={'280px'}
-            h={'250px'}
-            color={'white'}
-            p={10}
-            _hover={{
-              backgroundColor: 'rgba(255,255,255,0.5)',
-              cursor: 'pointer',
-            }}
-          >
-            <GoLocation size={50} />
-            <Heading as={'h3'}>Бабурка</Heading>
-            <Text>Героїв 93-ї бригади, 22</Text>
-          </Flex>
-        </Link>
+        <Box w={'450px'}>
+          {/*     gym description     */}
+          <Text fontSize={'2xl'} color={'white'}>
+            Спортивный клуб Maximus в Запорожье представлен двумя залами. Первый зал расположен в
+            Хо́ртицком районе города, на правом берегу Днепра. Второй зал расположен в Коммунарском
+            районе города, на левом берегу Днепра.
+          </Text>
+        </Box>
+        {/*     gyms    */}
+        <Flex flexDir={'column'}>
+          {GYM_ITEMS.map((item) => (
+            <Link href={item.link} key={item.id}>
+              <Flex
+                align={'center'}
+                w={'380px'}
+                h={'150px'}
+                color={'white'}
+                py={10}
+                pl={10}
+                _hover={{
+                  backgroundColor: 'rgba(255,255,255,0.5)',
+                  cursor: 'pointer',
+                }}
+              >
+                <Box pr={4}>
+                  <GoLocation size={50} />
+                </Box>
+                <Flex flexDir={'column'}>
+                  <Heading as={'h3'}>{item.name}</Heading>
+                  <Text>{item.address}</Text>
+                </Flex>
+              </Flex>
+            </Link>
+          ))}
+        </Flex>
       </Flex>
 
       <Flex

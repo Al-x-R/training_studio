@@ -15,8 +15,8 @@ const Header: FC<IMenuList> = ({ navItems }) => {
       justify={'space-between'}
       align={'center'}
       px={10}
-      backgroundColor={'rgba(250,250,250,0.3)'}
-      color={'white'}
+      backgroundColor={'rgba(250,250,250,0.7)'}
+      color={'black'}
       transition={'all .5s ease 0s'}
       position={'absolute'}
       top={0}
