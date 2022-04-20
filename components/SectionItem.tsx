@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { Box, Heading, Flex } from '@chakra-ui/react';
+import { Box, Heading, Flex, AspectRatio } from '@chakra-ui/react';
+import Link from 'next/link';
 
 interface ISectionItem {
   name: string;
@@ -7,33 +8,40 @@ interface ISectionItem {
   image: string;
 }
 
-const SectionItem: FC<ISectionItem> = ({name, image, link}) => {
+const SectionItem: FC<ISectionItem> = ({ name, image, link }) => {
   return (
-        <Box
-          w={'300px'}
-          h={'300px'}
-          overflow={'hidden'}
-          position={'relative'}
-          backgroundImage={`url(${image})`}
-          backgroundPosition={'center'}
-          backgroundSize='cover'
-        >
-          <Flex
-            w={'100%'}
-            h={'50px'}
-            position={'absolute'}
-            bottom={0}
-            left={0}
-            align={'center'}
-            justify={'center'}
-            flexDir={'column'}
-            color={'white'}
-            pb={2}
-            backgroundColor={'rgba(250,250,250,0.7)'}
+    <Link href={link}>
+      <a>
+        <AspectRatio width={'100%'} ratio={1 / 1}>
+          <Box
+            overflow={'hidden'}
+            position={'relative'}
+            backgroundImage={`url(${image})`}
+            backgroundPosition={'center'}
+            backgroundSize='cover'
+            shadow='md'
           >
-            <Heading fontSize={'lg'} color={'black'}>{name}</Heading>
-          </Flex>
-        </Box>
+            <Flex
+              w={'100%'}
+              h={'25%'}
+              position={'absolute'}
+              bottom={0}
+              left={0}
+              align={'center'}
+              justify={'center'}
+              flexDir={'column'}
+              color={'white'}
+              pb={2}
+              backgroundColor={'rgba(250,250,250,0.7)'}
+            >
+              <Heading fontSize={'lg'} color={'black'}>
+                {name}
+              </Heading>
+            </Flex>
+          </Box>
+        </AspectRatio>
+      </a>
+    </Link>
   );
 };
 

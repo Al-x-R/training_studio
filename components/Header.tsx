@@ -25,12 +25,16 @@ const Header: FC<IMenuList> = ({ navItems }) => {
       zIndex={10}
     >
       <Text fontSize='lg'>
-        <Link href={'/'}>Maximus</Link>
+        <Link href={'/'}>
+          <a>Maximus</a>
+        </Link>
       </Text>
       <List d={'flex'}>
         {navItems.map((item) => (
           <ListItem key={item.id} px={2}>
-            <Link href={item.link}>{item.name}</Link>
+            <Link href={item.link}>
+              <a>{item.name}</a>
+            </Link>
           </ListItem>
         ))}
       </List>

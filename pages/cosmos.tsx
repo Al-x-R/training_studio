@@ -30,10 +30,12 @@ const Cosmos = () => {
       </Flex>
       {/*     sections     */}
       <Box textAlign={'center'}>
-        <Heading as={'h2'} size={'3xl'} py={5}>Наши услуги</Heading>
+        <Heading as={'h2'} size={'3xl'} py={5}>
+          Наши услуги
+        </Heading>
         <Flex w={'100%'} px={10} flexWrap={'wrap'}>
-          {COSMOS_SECTION_ITEMS.map(item => (
-            <Box key={item.id} w={'33%'} mb={5}>
+          {COSMOS_SECTION_ITEMS.map((item) => (
+            <Box key={item.id} w={'30%'} m={5}>
               <SectionItem image={item.image} name={item.name} link={item.link} />
             </Box>
           ))}

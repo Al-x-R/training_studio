@@ -50,26 +50,28 @@ const Home: NextPage = () => {
         <Flex flexDir={'column'}>
           {GYM_ITEMS.map((item) => (
             <Link href={item.link} key={item.id}>
-              <Flex
-                align={'center'}
-                w={'380px'}
-                h={'150px'}
-                color={'white'}
-                py={10}
-                pl={10}
-                _hover={{
-                  backgroundColor: 'rgba(255,255,255,0.5)',
-                  cursor: 'pointer',
-                }}
-              >
-                <Box pr={4}>
-                  <GoLocation size={50} />
-                </Box>
-                <Flex flexDir={'column'}>
-                  <Heading as={'h3'}>{item.name}</Heading>
-                  <Text>{item.address}</Text>
+              <a>
+                <Flex
+                  align={'center'}
+                  w={'380px'}
+                  h={'150px'}
+                  color={'white'}
+                  py={10}
+                  pl={10}
+                  _hover={{
+                    backgroundColor: 'rgba(255,255,255,0.5)',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Box pr={4}>
+                    <GoLocation size={50} />
+                  </Box>
+                  <Flex flexDir={'column'}>
+                    <Heading as={'h3'}>{item.name}</Heading>
+                    <Text>{item.address}</Text>
+                  </Flex>
                 </Flex>
-              </Flex>
+              </a>
             </Link>
           ))}
         </Flex>
@@ -87,12 +89,16 @@ const Home: NextPage = () => {
       >
         <Box>
           <Link href={'https://www.instagram.com/sk_maximus_zp/'}>
-            <FaInstagram size={30} />
+            <a>
+              <FaInstagram size={30} />
+            </a>
           </Link>
         </Box>
         <Box pl={4}>
           <Link href={'/#'}>
-            <FaTelegramPlane size={30} />
+            <a>
+              <FaTelegramPlane size={30} />
+            </a>
           </Link>
         </Box>
       </Flex>
