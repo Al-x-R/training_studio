@@ -12,7 +12,7 @@ const SectionItem: FC<ISectionItem> = ({ name, image, link }) => {
   return (
     <Link href={link}>
       <a>
-        <AspectRatio width={'100%'} ratio={1 / 1}>
+        <AspectRatio width={'100%'} ratio={1}>
           <Box
             overflow={'hidden'}
             position={'relative'}
@@ -20,6 +20,7 @@ const SectionItem: FC<ISectionItem> = ({ name, image, link }) => {
             backgroundPosition={'center'}
             backgroundSize='cover'
             shadow='md'
+            borderWidth='1px'
           >
             <Flex
               w={'100%'}

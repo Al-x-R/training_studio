@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import { NAV_ITEMS, COSMOS_SECTION_ITEMS } from '../helpers/helpers';
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import SectionItem from '../components/SectionItem';
+import TrainerItem from '../components/TrainerItem';
 
 const Cosmos = () => {
   return (
@@ -49,6 +50,7 @@ const Cosmos = () => {
       {/*trainers*/}
       <Flex w={'100%'} h={'500px'} background={'white'}>
         trainers
+        <TrainerItem />
       </Flex>
 
       {/*    footer    */}
