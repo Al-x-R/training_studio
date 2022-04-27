@@ -1,9 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
 import { NAV_ITEMS, COSMOS_SECTION_ITEMS } from '../helpers/helpers';
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, ScaleFade, Text } from '@chakra-ui/react';
 import SectionItem from '../components/SectionItem';
 import TrainerItem from '../components/TrainerItem';
+import Footer from '../components/Footer';
+import ScheduleTable from '../components/Schedules/ScheduleTable';
 
 const Cosmos = () => {
   return (
@@ -45,18 +47,20 @@ const Cosmos = () => {
 
       {/*     schedules     */}
       <Flex w={'100%'} h={'500px'} background={'silver'}>
-        schedules
+        <ScheduleTable />
       </Flex>
       {/*trainers*/}
       <Flex w={'100%'} h={'500px'} background={'white'}>
         trainers
-        <TrainerItem />
+        <Box w={'30%'}>
+          <TrainerItem />
+        </Box>
       </Flex>
 
       {/*    footer    */}
-      <Flex w={'100%'} h={'300px'} background={'silver'}>
-        footer
-      </Flex>
+      {/*<Flex w={'100%'} h={'150px'}>*/}
+      {/*  <Footer />*/}
+      {/*</Flex>*/}
     </>
   );
 };
