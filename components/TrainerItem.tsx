@@ -12,7 +12,7 @@ const TrainerItem: FC = () => {
   return (
     <Link href={'/#'}>
       <a>
-        <AspectRatio w={'300px'} ratio={3 / 4}>
+        <AspectRatio w={'100%'} ratio={6 / 7}>
           <Box shadow='md' borderWidth='1px' position={'relative'} overflow={'visible !important'}>
             <Box w={'100%'} h={'100%'} overflow={'hidden'}>
               <Image
@@ -21,19 +21,19 @@ const TrainerItem: FC = () => {
                 objectFit='cover'
                 objectPosition={'center'}
                 transition={'transform 0.25s'}
-                _hover={{ transform: 'scale(1.1)'}}
+                _hover={{ transform: 'scale(1.1)' }}
               />
             </Box>
             <Flex
               position={'absolute'}
-              bottom={'-10%'}
+              bottom={0}
               left={'50%'}
               transform={'translateX(-50%)'}
               w={'90%'}
               h={'100px'}
               shadow='md'
               borderWidth='1px'
-              background={'white'}
+              backgroundColor={'rgba(250,250,250,0.7)'}
               align={'center'}
               justify={'center'}
               flexDir={'column'}
