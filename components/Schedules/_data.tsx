@@ -1,13 +1,14 @@
 import { Box } from '@chakra-ui/react';
+import SectionCellData from './SectionCellData';
 
 export const columns = [
   {
-    Header: 'Тренер',
-    accessor: 'trainer',
-    Cell: function TrainerCell(data: any) {
+    Header: '',
+    accessor: 'section',
+    Cell: function SectionCell(data: any) {
       return (
         <Box fontSize='sm' fontWeight='medium'>
-          {data}
+          <SectionCellData data={data} />
         </Box>
       );
     },
@@ -94,7 +95,7 @@ export const columns = [
 
 export const data = [
   {
-    trainer: 'Trainer name',
+    section: { trainer: 'Trainer name', section: 'section' },
     mon: '15:00 - 16:00',
     tue: '',
     wed: '15:00 - 16:00',
@@ -104,7 +105,7 @@ export const data = [
     sun: '',
   },
   {
-    trainer: 'Trainer name',
+    section: { trainer: 'Trainer name', section: 'section' },
     mon: '18:00 - 19:00',
     tue: '',
     wed: '18:00 - 19:00',
@@ -114,7 +115,7 @@ export const data = [
     sun: '',
   },
   {
-    trainer: 'Trainer name',
+    section: { trainer: 'Trainer name', section: 'section' },
     mon: '',
     tue: '15:00 - 16:00',
     wed: '',

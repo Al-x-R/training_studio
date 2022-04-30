@@ -23,9 +23,10 @@ const ScheduleTable = () => {
               <Tr key={index} cursor={'pointer'}>
                 {columns.map((column, index) => {
                   const cell = row[column.accessor as keyof typeof row];
+                  const element = column.Cell?.(cell) ?? cell;
                   return (
                     <Td whiteSpace='nowrap' key={index}>
-                      {cell}
+                      {element}
                     </Td>
                   );
                 })}
