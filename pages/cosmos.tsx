@@ -46,7 +46,7 @@ const Cosmos = () => {
       </Box>
 
       {/*     schedules     */}
-      <Flex w={'100%'} h={'500px'} background={'silver'}>
+      <Flex w={'100%'} h={'500px'} background={'silver'} justify={'center'}>
         <ScheduleTable />
       </Flex>
       {/*trainers*/}

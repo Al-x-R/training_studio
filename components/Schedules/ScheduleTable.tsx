@@ -9,18 +9,17 @@ const ScheduleTable = () => {
         <Thead position='sticky' top={0}>
           <Tr h={10}>
             {columns.map((column, index) => (
-              <Th whiteSpace='nowrap' scope='col' key={index}>
+              <Th whiteSpace='nowrap' scope='col' key={index} textAlign={'center'}>
                 {column.Header}
               </Th>
             ))}
-            <Th />
           </Tr>
         </Thead>
 
         <Tbody>
           {data.map((row, index) => {
             return (
-              <Tr key={index} cursor={'pointer'}>
+              <Tr key={index}>
                 {columns.map((column, index) => {
                   const cell = row[column.accessor as keyof typeof row];
                   const element = column.Cell?.(cell) ?? cell;
