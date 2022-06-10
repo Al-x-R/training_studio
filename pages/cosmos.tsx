@@ -6,6 +6,7 @@ import SectionItem from '../components/SectionItem';
 import TrainerItem from '../components/TrainerItem';
 import Footer from '../components/Footer';
 import ScheduleTable from '../components/Schedules/ScheduleTable';
+import Slider from '../components/Slider';
 
 const Cosmos = () => {
   return (
@@ -50,10 +51,13 @@ const Cosmos = () => {
         <ScheduleTable />
       </Flex>
       {/*trainers*/}
-      <Flex w={'100%'} h={'500px'} background={'white'}>
-        trainers
-        <Box w={'30%'}>
-          <TrainerItem />
+      <Flex w={'100%'} h={'500px'} background={'white'} flexDir={'column'}>
+        <Box>trainers</Box>
+        {/*<Box w={'30%'}>*/}
+        {/*  <TrainerItem />*/}
+        {/*</Box>*/}
+        <Box>
+          <Slider />
         </Box>
       </Flex>
 

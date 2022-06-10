@@ -17,7 +17,6 @@ export const columns = [
     Header: 'Понедельник',
     accessor: 'mon',
     Cell: function MondayCell(data: any) {
-      console.log('cell', data);
       return (
         <Box fontSize='sm' fontWeight='medium'>
           {data}
